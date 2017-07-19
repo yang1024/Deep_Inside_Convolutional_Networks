@@ -1,16 +1,16 @@
 # Deep_Inside_Convolutional_Networks
 This is a caffe implementation to visualize the learnt model.
 
-###visualize.py--->最大化类的得分，迭代更新图像I
+### visualize.py--->最大化类的得分，迭代更新图像I
 
 ![max](/supplement/maxScI.png)
 
-###class_saliency_extraction.py--->特定类对特定输入图像的导数（特定类显著图）
+### class_saliency_extraction.py--->特定类对特定输入图像的导数（特定类显著图）
 
 ![derivative](/supplement/derivative.png)
 ![derivative](/supplement/saliencymap.png)
 
-###backprop_analysis.py--->回传时，每一层的梯度作为图片，保存起来
+### backprop_analysis.py--->回传时，每一层的梯度作为图片，保存起来
 
 Part of a class project at [Georgia Tech](www.cc.gatech.edu/~zk15/deep_learning_course.html)   
 Problem Statement [Pdf](https://github.com/artvandelay/Deep_Inside_Convolutional_Networks/blob/master/Assignment3.pdf)   
@@ -18,7 +18,7 @@ Problem Statement [Pdf](https://github.com/artvandelay/Deep_Inside_Convolutional
 Simonyan, K., Vedaldi, A., Zisserman, A.: Deep inside convolutional networks:
 Visualising image classification models and saliency maps [Pdf](https://github.com/artvandelay/Deep_Inside_Convolutional_Networks/blob/master/1312.6034v2.pdf)
 
-###Results: 
+### Results: 
 
 **Class Model visualization of Cat**  
 In this exercise, we will use the method suggested in the “Deep inside convolutional
