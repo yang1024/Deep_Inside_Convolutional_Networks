@@ -10,6 +10,8 @@ class_saliency_extraction.py--->特定类对特定输入图像的导数（特定
 ![derivative](/supplement/derivative.png)
 ![derivative](/supplement/saliencymap.png)
 
+backprop_analysis.py--->回传时，每一层的梯度作为图片，保存起来
+
 Part of a class project at [Georgia Tech](www.cc.gatech.edu/~zk15/deep_learning_course.html)   
 Problem Statement [Pdf](https://github.com/artvandelay/Deep_Inside_Convolutional_Networks/blob/master/Assignment3.pdf)   
 
