@@ -1,6 +1,8 @@
 # Deep_Inside_Convolutional_Networks
 This is a caffe implementation to visualize the learnt model.
 
+visualize.py--->
+
 Part of a class project at [Georgia Tech](www.cc.gatech.edu/~zk15/deep_learning_course.html)   
 Problem Statement [Pdf](https://github.com/artvandelay/Deep_Inside_Convolutional_Networks/blob/master/Assignment3.pdf)   
 
