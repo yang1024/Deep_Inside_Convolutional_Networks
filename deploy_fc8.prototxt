@@ -1,26 +1,26 @@
 name: "CaffeNet"
 input: "data"
-input_dim: 1
-input_dim: 3 
-input_dim: 227
-input_dim: 227
+input_dim: 1  # 一批的数量（bach of image ）
+input_dim: 3  #通道数量（channels 彩色图是3通道RGB）
+input_dim: 227  #图像的高度（height）
+input_dim: 227  #图像的宽度（weight）
 
 force_backward: true
 
 layer {
-  name: "conv1"
-  type: "Convolution"
-  bottom: "data"
-  top: "conv1"
-  convolution_param {
-    num_output: 96
-    kernel_size: 11
-    stride: 4
+  name: "conv1"         #层的名称
+  type: "Convolution"   # 层的类型
+  bottom: "data"    #层的输入（主要是对应上面的data）
+  top: "conv1"      #层的输出（对应的是本层卷积的结果） 
+  convolution_param {   #卷积的参数
+    num_output: 96      #过滤器的个数  可以看做的是卷积核的个数
+    kernel_size: 11     #卷积核的大小
+    stride: 4           #图像中的间隔多少进行卷积（滤波器窗口滑动的步长）
   }
 }
 layer {
   name: "relu1"
-  type: "ReLU"
+  type: "ReLU"    #激活函数
   bottom: "conv1"
   top: "conv1"
 }
@@ -30,14 +30,14 @@ layer {
   bottom: "conv1"
   top: "pool1"
   pooling_param {
-    pool: MAX
+    pool: MAX     #使用最大池化
     kernel_size: 3
     stride: 2
   }
 }
 layer {
   name: "norm1"
-  type: "LRN"
+  type: "LRN"   #Local Response Normalization (LRN) (侧抑制)
   bottom: "pool1"
   top: "norm1"
   lrn_param {
@@ -53,9 +53,9 @@ layer {
   top: "conv2"
   convolution_param {
     num_output: 256
-    pad: 2
+    pad: 2        #边界填充，补2个行和2个列
     kernel_size: 5
-    group: 2
+    group: 2      #卷积分组（补，最下面的解释）
   }
 }
 layer {
@@ -200,10 +200,12 @@ layer {
 }
 layer {
   name: "fc8"
-  type: "InnerProduct"
+  type: "InnerProduct"   #内积（全连接层）
   bottom: "fc7"
   top: "fc8"
   inner_product_param {
-    num_output: 1000
+    num_output: 1000     #输出的个数
   }
 }
+
+#卷积时每个input（feature map）需要和每一个kernel都进行连接，但是由于分组的原因input只是与部分的kernel进行连接。
